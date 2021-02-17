@@ -35,5 +35,16 @@
   margin: auto;
   background-color: aliceblue;
   color: darkcyan;
-  border: solid 3px darkcyan;
+  border: solid 5px darkcyan;
+  border-radius: 10px;
+}
+
+button {
+  background-color: darkcyan;
+  color: aliceblue;
+  font-size: 1rem;
+  margin-bottom: 2%;
+  width: 60%;
+  border: none;
+  cursor: pointer;
 }
