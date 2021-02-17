@@ -66,7 +66,7 @@ class Form extends Component{
         </input>
         <button 
         className="submit-button" 
-        disabled={ !this.state.name || !this.state.date || !this.state.time || this.state.number }
+        disabled={ !this.state.name || !this.state.date || !this.state.time || !this.state.number }
         onClick={this.addReservation}>
           Make a Reservation
         </button>
