@@ -39,6 +39,14 @@
   border-radius: 10px;
 }
 
+.res-name {
+  margin: 3%;
+}
+
+p {
+  margin: 4%;
+}
+
 button {
   background-color: darkcyan;
   color: aliceblue;
