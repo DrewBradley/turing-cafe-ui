@@ -6,22 +6,22 @@ describe('Reservation Form', () => {
 
   it('Should be able to add text to "name"', () => {
     cy.visit('http://localhost:3000')
-      cy.get('input[name=name]').type('Scott')
+      cy.get('input[name=name]').type('Scott').should('have.value', 'Scott')
   });
 
   it('Should be able to add text to "date"', () => {
     cy.visit('http://localhost:3000')
-      cy.get('input[name=date]').type('02/14')
+      cy.get('input[name=date]').type('02/14').should('have.value', '02/14')
   });
 
   it('Should be able to add text to "time"', () => {
     cy.visit('http://localhost:3000')
-      cy.get('input[name=time]').type('12:00')
+      cy.get('input[name=time]').type('12:00').should('have.value', '12:00')
   });
 
   it('Should be able to select a number for "number of guests"', () => {
     cy.visit('http://localhost:3000')
-      cy.get('input[name=number]').type(1)
+      cy.get('input[name=number]').type(1).should('have.value', 1)
   });
 
   it('Should be able to submit a reservation', () => {
