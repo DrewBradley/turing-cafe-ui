@@ -55,6 +55,16 @@ button {
   cursor: pointer;
 }
 
+.submit-button:disabled {
+  content: "please complete form";
+  color: darkgray;
+  cursor: help;
+}
+
+.submit-button {
+  content: "Make a reservation";
+}
+
 .cancel-btn {
   margin-bottom: 2%;
   width: 60%;
