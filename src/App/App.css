@@ -17,3 +17,23 @@
   font-family: 'Pacifico', cursive;
   font-size: 50px;
 }
+
+.reservation-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 2%;
+  width: 100vw;
+}
+
+.res-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  background-color: aliceblue;
+  color: darkcyan;
+  border: solid 3px darkcyan;
+}
