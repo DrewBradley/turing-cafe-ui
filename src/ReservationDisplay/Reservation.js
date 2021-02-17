@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Reservation = () => {
+const Reservation = ({name, date, time, count}) => {
   return (
     <article className="res-card">
-      <h1 className="res-name">Person</h1>
-      <p className="res-date">Date</p>
-      <p className="res-time">Time</p>
-      <p className="res-count">Number</p>
+      <h1 className="res-name">{name}</h1>
+      <p className="res-date">{date}</p>
+      <p className="res-time">{time} pm</p>
+      <p className="res-count">Number of guest: {count}</p>
       <button className="cancel-btn">Cancel</button>
     </article>
   )

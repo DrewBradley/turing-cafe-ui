@@ -4,6 +4,21 @@ import ReservationDisplay from '../ReservationDisplay/ReservationDisplay'
 import Form from '../Form/Form'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      reservations: [],
+      errorMdg: ""
+    }
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3001/api/v1/reservations')
+      .then(response => response.json())
+      .then(data => this.setState({reservations: data}))
+      .catch(error => this.setState({errorMsg: error}))
+  }
+
   render() {
     return (
       <div className="App">
@@ -12,7 +27,7 @@ class App extends Component {
           <Form />
         </div>
         <div className='resy-container'>
-          <ReservationDisplay />
+          <ReservationDisplay data={this.state.reservations}/>
         </div>
       </div>
     )

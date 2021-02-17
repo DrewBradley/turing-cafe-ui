@@ -23,7 +23,7 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
   grid-gap: 2%;
-  width: 100vw;
+  width: 95vw;
 }
 
 .res-card {
