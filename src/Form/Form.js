@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 class Form extends Component{
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
+      id: Date.now(),
       name: "",
       date: "",
       time: "",
@@ -15,6 +16,22 @@ class Form extends Component{
     const {name, value} = event.target
     this.setState({[name]: value})
     console.log(this.state)
+  }
+
+  addReservation = (event) => {
+    event.preventDefault()
+    this.props.addReservation(this.state)
+    this.clearFields()
+  }
+
+  clearFields = () => {
+    this.setState({
+      id: Date.now(),
+      name: "",
+      date: "",
+      time: "",
+      number: ""
+    })
   }
 
   render() {
@@ -48,7 +65,7 @@ class Form extends Component{
           value={this.state.number}
           onChange={this.handleChange}>
         </input>
-        <button>
+        <button onClick={this.addReservation}>
           Make a Reservation
         </button>
       </form>

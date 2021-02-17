@@ -12,6 +12,19 @@ class App extends Component {
     }
   }
 
+  addReservation = (res) => {
+    this.setState({
+      reservations: [...this.state.reservations, res]
+    })
+  }
+
+  removeReservation = (id) => {
+    const newResList = this.state.reservations.filter(res => res.id !== id);
+    this.setState({
+      reservations: newResList
+    })
+  }
+
   componentDidMount() {
     fetch('http://localhost:3001/api/v1/reservations')
       .then(response => response.json())
@@ -19,21 +32,15 @@ class App extends Component {
       .catch(error => this.setState({errorMsg: error}))
   }
 
-  addReservation = (res) => {
-    this.setState({
-      reservations: [...this.state.reservations, res]
-    })
-  }
-
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <Form addRes={this.addReservation}/>
+          <Form addReservation={this.addReservation}/>
         </div>
         <div className='resy-container'>
-          <ReservationDisplay data={this.state.reservations} />
+          <ReservationDisplay data={this.state.reservations} removeReservation={this.removeReservation}/>
         </div>
       </div>
     )
