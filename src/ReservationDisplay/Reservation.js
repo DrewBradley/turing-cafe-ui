@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Reservation = ({name, date, time, count, removeRes}) => {
+const Reservation = ({id, name, date, time, count, removeReservation}) => {
   return (
     <article className="res-card">
       <h1 className="res-name">{name}</h1>
@@ -9,7 +9,7 @@ const Reservation = ({name, date, time, count, removeRes}) => {
       <p className="res-count">Number of guest: {count}</p>
       <button 
         className="cancel-btn"
-        onClick={removeRes}
+        onClick={() => {removeReservation(id)}}
         >Cancel
       </button>
     </article>
